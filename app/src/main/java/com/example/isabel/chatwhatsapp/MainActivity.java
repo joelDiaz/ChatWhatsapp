@@ -3,6 +3,7 @@ package com.example.isabel.chatwhatsapp;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
@@ -14,7 +15,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "ChatActivity";
+//    private static final String TAG = "ChatActivity";
     private ChatArrayAdapter chatArrayAdapter;
     private ListView listView;
     private EditText chatText;
@@ -26,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         buttonSend = (Button)findViewById(R.id.send);
         listView = (ListView)findViewById(R.id.msgview);
 
 
-        chatArrayAdapter = new ChatArrayAdapter(getApplicationContext(),R.layout.right);
+        chatArrayAdapter = new ChatArrayAdapter(getApplicationContext(),R.layout.left);
         listView.setAdapter(chatArrayAdapter);
 
 
@@ -66,69 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 listView.setSelection(chatArrayAdapter.getCount() - 1);
             }
         });
-//        com1 = (ListView)findViewById(R.id.commentario1);
-//        com2 = (ListView) findViewById(R.id.commentario2);
-//        send = (ImageButton) findViewById(R.id.Enviar);
-//        mensaje = (EditText) findViewById(R.id.mensaje);
 
-//        final ArrayList<String> lista = new ArrayList<>();
-//        final ArrayAdapter<String> adaptador;
-//        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
-//        final ListView selecte = (ListView) findViewById(R.id.commentario1);
-//        adaptador.setDropDownViewResource(android.R.layout.simple_list_item_1);
-//        selecte.setAdapter(adaptador);
-//        Integer numero = 4;
-
-
-//        send.setOnClickListener(new View.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(View v) {
-//                                        if ((mensaje.getText().toString().length() > 0)) {
-//
-//                                            lista.add(mensaje.getText().toString());
-//                                            adaptador.notifyDataSetChanged();
-//                                            mensaje.setText("");
-//                                        } else if ((mensaje.getText().toString().equals(""))) {
-//
-//                                            Toast.makeText(MainActivity.this, "Texto vacio", Toast.LENGTH_SHORT).show();
-//
-//                                        }
-//
-//                                    }
-//                                }
-//
-//        );
-
-//
-//        for (int i = 0; i <= numero; i++) {
-//
-//            numero = numero - 1;
-//            System.out.println("numero" + numero);
-//            /**Segunda lista de comentarios del chat*/
-//            final ArrayList<String> lista2 = new ArrayList<>();
-//            final ArrayAdapter<String> adaptador2;
-//            adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista2);
-//            final ListView selecte2 = (ListView) findViewById(R.id.commentario2);
-//            adaptador2.setDropDownViewResource(android.R.layout.simple_list_item_1);
-//            selecte2.setAdapter(adaptador2);
-//
-//
-//            new CountDownTimer(3000, 1000) {
-//
-//                public void onTick(long millisUntilFinished) {
-//
-//                }
-//
-//                public void onFinish() {
-//                    lista2.add("hello world");
-//                    adaptador2.notifyDataSetChanged();
-//
-//                }
-//
-//            }.start();
-//
-//
-//        }
     }
 
 
@@ -174,3 +115,70 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+
+/**
+ * //        com1 = (ListView)findViewById(R.id.commentario1);
+ //        com2 = (ListView) findViewById(R.id.commentario2);
+ //        send = (ImageButton) findViewById(R.id.Enviar);
+ //        mensaje = (EditText) findViewById(R.id.mensaje);
+
+ //        final ArrayList<String> lista = new ArrayList<>();
+ //        final ArrayAdapter<String> adaptador;
+ //        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
+ //        final ListView selecte = (ListView) findViewById(R.id.commentario1);
+ //        adaptador.setDropDownViewResource(android.R.layout.simple_list_item_1);
+ //        selecte.setAdapter(adaptador);
+ //        Integer numero = 4;
+
+
+ //        send.setOnClickListener(new View.OnClickListener() {
+ //                                    @Override
+ //                                    public void onClick(View v) {
+ //                                        if ((mensaje.getText().toString().length() > 0)) {
+ //
+ //                                            lista.add(mensaje.getText().toString());
+ //                                            adaptador.notifyDataSetChanged();
+ //                                            mensaje.setText("");
+ //                                        } else if ((mensaje.getText().toString().equals(""))) {
+ //
+ //                                            Toast.makeText(MainActivity.this, "Texto vacio", Toast.LENGTH_SHORT).show();
+ //
+ //                                        }
+ //
+ //                                    }
+ //                                }
+ //
+ //        );
+
+ //
+ //        for (int i = 0; i <= numero; i++) {
+ //
+ //            numero = numero - 1;
+ //            System.out.println("numero" + numero);
+ //            /**Segunda lista de comentarios del chat
+//            final ArrayList<String> lista2 = new ArrayList<>();
+//            final ArrayAdapter<String> adaptador2;
+//            adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista2);
+//            final ListView selecte2 = (ListView) findViewById(R.id.commentario2);
+//            adaptador2.setDropDownViewResource(android.R.layout.simple_list_item_1);
+//            selecte2.setAdapter(adaptador2);
+//
+//
+//            new CountDownTimer(3000, 1000) {
+//
+//                public void onTick(long millisUntilFinished) {
+//
+//                }
+//
+//                public void onFinish() {
+//                    lista2.add("hello world");
+//                    adaptador2.notifyDataSetChanged();
+//
+//                }
+//
+//            }.start();
+//
+//
+//        }
+// */
