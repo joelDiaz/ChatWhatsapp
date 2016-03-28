@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChatWhatsapp</string>
+    <string name="action_settings">Settings</string>
+    <string name="send">Send</string>
+    <string name="sample">Sampleleft</string>
+    <string name="samplex">Sample</string>
+</resources>
