@@ -2,7 +2,6 @@ package com.example.isabel.chatwhatsapp;
 
 import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -16,13 +15,11 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //    private static final String TAG = "ChatActivity";
     private ChatArrayAdapter chatArrayAdapter;
     private ListView listView;
     private EditText chatText;
     private Button buttonSend;
     private boolean side = false;
-//    private ArrayList<String> lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        /** Para que la listviw pueda ser scrolleable */
         listView.setTranscriptMode(AbsListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
         listView.setAdapter(chatArrayAdapter);
 
@@ -91,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     private boolean sendChatMessage() {
         chatArrayAdapter.add(new ChatMessage(side, chatText.getText().toString()));
