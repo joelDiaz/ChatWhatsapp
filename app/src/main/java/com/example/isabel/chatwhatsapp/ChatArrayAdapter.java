@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -18,7 +17,8 @@ import java.util.regex.Pattern;
  */
 public class ChatArrayAdapter extends ArrayAdapter<MainActivity.ChatMessage> {
     private TextView chatText;
-    private List<MainActivity.ChatMessage> chatMessageList = new ArrayList<MainActivity.ChatMessage>();
+    private List<MainActivity.ChatMessage>
+            chatMessageList = new ArrayList<MainActivity.ChatMessage>();
     private Context context;
 
     @Override
