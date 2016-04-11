@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:background="#efefef"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    >
 
     <ListView
         android:id="@+id/msgview"
